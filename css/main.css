@@ -126,6 +126,7 @@ body {
 }
 .allergens__list > li > label {
   display: block;
+  cursor: pointer;
 }
 
 .card {
