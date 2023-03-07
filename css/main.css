@@ -85,6 +85,9 @@ body {
 .allergens:hover > .allergens__head {
   border-radius: 0.375rem 0.375rem 0 0;
 }
+.allergens:hover .allergens__img {
+  background-image: url("../images/caret-up-fill.svg");
+}
 .allergens__head {
   padding: 0.375rem 0.75rem;
   line-height: 1.5;
@@ -93,16 +96,20 @@ body {
   border: 1px solid #f8f9fa;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
-.allergens__head:hover {
-  background-color: #d3d4d5;
-  border-color: #c6c7c8;
+.allergens__img {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  background-image: url("../images/caret-down-fill.svg");
 }
-.allergens__head > span {
+
+.allergens__head > span:first-of-type {
   margin-right: 10px;
 }
 .allergens__body {
-  /* display: none; */
+  display: none;
   width: 100%;
   position: absolute;
   padding: 0.375rem 0.75rem;
