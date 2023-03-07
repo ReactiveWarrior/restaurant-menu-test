@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant menu</title>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Restaurant menu</h1>
+    </header>
+    <nav class="navbar">
+      <div class="navbar__col">
+        <div class="categories">
+          <div class="category category_active">All</div>
+          <div class="category">Vegetarian</div>
+          <div class="category">Vegan</div>
+          <!-- <div class="category">Without allergens</div> -->
+        </div>
+        <div class="vert-divider"></div>
+        <div class="allergens">
+          <div class="allergens__head">
+            <span>Exclude allergens</span>
+            <img src="./images/caret-down-fill.svg" />
+          </div>
+          <div class="allergens__body">
+            <ul class="allergens__list">
+              <li>
+                <label
+                  ><input type="checkbox" name="Milk" class="allergen" />
+                  Milk</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input type="checkbox" name="Wheat" class="allergen" />
+                  Wheat</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input type="checkbox" name="Pumpkin" class="allergen" />
+                  Pumpkin</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input type="checkbox" name="Seafood" class="allergen" />
+                  Seafood</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input type="checkbox" name="Egg" class="allergen" />
+                  Egg</label
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- <div class="allergens">
+          <label class="allergen">
+            <input type="checkbox" />
+            Milk free
+          </label>
+          <label class="allergen">
+            <input type="checkbox" />
+            Wheat free
+          </label>
+          <label class="allergen">
+            <input type="checkbox" />
+            Pumpkin free
+          </label>
+          <label class="allergen">
+            <input type="checkbox" />
+            Seafood free
+          </label>
+          <label class="allergen">
+            <input type="checkbox" />
+            Eggs free
+          </label>
+        </div> -->
+      </div>
+      <div class="navbar__col">
+        <input type="text" placeholder="Search..." id="search" />
+      </div>
+    </nav>
+    <main>
+      <div class="cards-wrapper">
+        <!-- <div class="card">
+          <img
+            src="./images/americano.jpg"
+            alt="card-1"
+            class="card__img"
+            width="320"
+            height="200"
+          />
+          <h4>Title</h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
+            aspernatur adipisci quibusdam blanditiis temporibus cum recusandae
+            magnam aliquid ipsum repellat labore voluptatum fugit maxime, eum
+            magni ratione necessitatibus ex a.
+          </p>
+        </div> -->
+      </div>
+    </main>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
