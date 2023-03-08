@@ -334,3 +334,27 @@ const handleAllergenChange = (e) => {
 };
 
 allergens?.addEventListener("change", handleAllergenChange);
+
+// scrollToTop logic
+const scrollToTopBtn = document.querySelector(".scrollToTop");
+
+const handleDisplayScrollToTop = () => {
+  if (!scrollToTopBtn) {
+    return;
+  }
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    // @ts-ignore
+    scrollToTopBtn.style.display = "flex";
+  } else {
+    // @ts-ignore
+    scrollToTopBtn.style.display = "none";
+  }
+};
+
+const handleScrollToTop = () => {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+};
+
+window.addEventListener("scroll", handleDisplayScrollToTop);
+scrollToTopBtn?.addEventListener("click", handleScrollToTop);
