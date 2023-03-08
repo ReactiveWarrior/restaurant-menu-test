@@ -155,8 +155,8 @@ const menu: MenuItem[] = [
     categories: ["Vegetarian", "Vegan"],
   },
 ];
-let currentMenu = [...menu];
 
+// utils
 const getAllergensFilteredMenu = (menu: MenuItem[]) => {
   const allergens = Array.from(document.querySelectorAll(".allergen"));
   // @ts-ignore
@@ -213,14 +213,14 @@ const getSearchedMenu = (menu: MenuItem[]) => {
   return searchedMenu;
 };
 
-const cardsWrapper = document.querySelector(".cards-wrapper");
 const renderMenu = (menu: MenuItem[]) => {
+  const cardsWrapper = document.querySelector(".cards-wrapper");
   if (!cardsWrapper) {
     return;
   }
   cardsWrapper.innerHTML = "";
   menu.forEach((item) =>
-    cardsWrapper?.insertAdjacentHTML(
+    cardsWrapper.insertAdjacentHTML(
       "beforeend",
       `<div class="card">
         <div class="card__img-wrapper">
@@ -240,16 +240,10 @@ const renderMenu = (menu: MenuItem[]) => {
     )
   );
 };
-renderMenu(menu);
+// ------------
+renderMenu(menu); // init render
 
-const getCurrentMenuItems = () => {
-  if (!cardsWrapper) {
-    return;
-  }
-  const currentMenuItems = Array.from(cardsWrapper?.children);
-  return currentMenuItems;
-};
-
+// handling search
 const searchInput = document.getElementById("search");
 
 const handleSearchChange = (e) => {
@@ -267,13 +261,14 @@ const handleSearchChange = (e) => {
 
 searchInput?.addEventListener("input", handleSearchChange);
 
+// handling catgory change
 const categoriesWrapper = document.querySelector(".categories");
 
 const handleCategoryChange = (e) => {
   if (!categoriesWrapper?.children) {
     return;
   }
-  const categories = Array.from(categoriesWrapper?.children);
+  const categories = Array.from(categoriesWrapper.children);
   const isTargetCategory = categories.some((category) => category === e.target);
   if (!isTargetCategory) {
     return;
@@ -297,12 +292,12 @@ const handleCategoryChange = (e) => {
   const menuByCategory = currentMenu.filter((item) =>
     item.categories?.includes(e.target.innerText)
   );
-
   renderMenu(menuByCategory);
 };
 
 categoriesWrapper?.addEventListener("click", handleCategoryChange);
 
+// handling allergen exclude
 const allergens = document.querySelector(".allergens");
 
 const handleAllergenChange = (e) => {
