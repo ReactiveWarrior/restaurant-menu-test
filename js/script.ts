@@ -223,15 +223,20 @@ const renderMenu = (menu: MenuItem[]) => {
     cardsWrapper?.insertAdjacentHTML(
       "beforeend",
       `<div class="card">
-        <img 
-          src="${item.image}"
-          alt="${item.name}" class="card__img"
-          width="320"
-          height="200"
-        />
-        <h4>${item.name}</h4>
-        <p>${item.description}</p>
-    </div>`
+        <div class="card__img-wrapper">
+          <img
+            src="${item.image}"
+            alt="${item.name}"
+            class="card__img"
+            width="320"
+            height="200"
+          />
+        </div>
+        <div class="card__body">
+          <h4 class="card__title">${item.name}</h4>
+          <p>${item.description}</p>
+        </div>
+      </div>`
     )
   );
 };

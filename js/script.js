@@ -172,14 +172,19 @@ const renderMenu = (menu) => {
     }
     cardsWrapper.innerHTML = "";
     menu.forEach((item) => cardsWrapper === null || cardsWrapper === void 0 ? void 0 : cardsWrapper.insertAdjacentHTML("beforeend", `<div class="card">
-        <img 
+         <div class="card__img-wrapper">
+        <img
           src="${item.image}"
-          alt="${item.name}" class="card__img"
+          alt="${item.name}"
+          class="card__img"
           width="320"
           height="200"
         />
-        <h4>${item.name}</h4>
+      </div>
+      <div class="card__body">
+        <h4 class="card__title">${item.name}</h4>
         <p>${item.description}</p>
+      </div>
     </div>`));
 };
 renderMenu(menu);
