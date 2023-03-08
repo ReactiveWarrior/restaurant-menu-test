@@ -169,4 +169,16 @@ body {
   .cards-wrapper {
     grid-template-columns: 1fr;
   }
+  .navbar__col:last-of-type {
+    display: block;
+  }
+  .vert-divider {
+    display: none;
+  }
+  .allergens {
+    margin-top: 10px;
+  }
+  .allergens__head {
+    justify-content: space-between;
+  }
 }
